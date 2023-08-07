@@ -1,5 +1,10 @@
 # Category: ImageRegistration
 
-# Please refer to "AI Evaluation Test.pdf" for the full scope of this project
+Please refer to "AI Evaluation Test.pdf" for the full scope of this project
 
-# Tasks: Identify which frames in the clip have the staff present and locate the staff xy coordinates present in the clip.
+Problem: AI Evaluation Test.pdf
+Image Reference: ImageSample folder
+Clip: sample.mp4
+Documentation: FootfallCam Interview ^N1 Documentation.pdf
+Code: FootfallCam Interview 1.ipynb
+Chosen model: trial_8b AKAZE-BRUTE-RANSAC.py
