@@ -70,13 +70,14 @@ def find_matches_in_video(image_folder, video_path):
                 if M is not None:
                     # Transform coordinates using the homography matrix
                     transformed_pts = cv2.perspectiveTransform(src_pts, M)
-                    frame_with_indicators = frame.copy()
+                    
                     # Draw indicators at matched keypoints in the video
                     for i in range(len(good_matches)):
                         pt2 = (int(dst_pts[i][0][0]), int(dst_pts[i][0][1]))
                         cv2.circle(frame, pt2, 5, (0, 0, 255), -1)  # Red circle
                     frame_filename = f"matched_frame_{i}.jpg"  # Create a unique filename
                     frame_path = os.path.join("matched_keypoints", frame_filename)
+                    frame_with_indicators = frame.copy()
                     cv2.imwrite(frame_path, frame_with_indicators)
                     # Store timestamp and transformed XY coordinates
                     timestamp = video.get(cv2.CAP_PROP_POS_MSEC) / 1000.0
