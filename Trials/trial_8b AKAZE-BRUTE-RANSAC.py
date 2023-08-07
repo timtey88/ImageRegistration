@@ -75,7 +75,9 @@ def find_matches_in_video(image_folder, video_path):
                     for i in range(len(good_matches)):
                         pt2 = (int(dst_pts[i][0][0]), int(dst_pts[i][0][1]))
                         cv2.circle(frame, pt2, 5, (0, 0, 255), -1)  # Red circle
-                    
+                    frame_filename = f"matched_frame_{i}.jpg"  # Create a unique filename
+                    frame_path = os.path.join("matched_keypoints", frame_filename)
+                    cv2.imwrite(frame_path, frame_with_indicators)
                     # Store timestamp and transformed XY coordinates
                     timestamp = video.get(cv2.CAP_PROP_POS_MSEC) / 1000.0
                     xy_coords = transformed_pts.squeeze().tolist()
